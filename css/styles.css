@@ -1,0 +1,119 @@
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.header img {
+    width: 100px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Botones para Questions */
+.Questions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Questions div {
+    flex: 1;
+    margin: 5px;
+    background-color: #007BFF;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.Questions div a h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.Questions div:hover {
+    background-color: #0056b3;
+}
+
+/* Secciones adicionales */
+.Tools, .Sites {
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.footerMe p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.copy {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Responsive para iPhone 15 Pro Max */
+@media only screen and (max-width: 430px) {
+    body {
+        padding: 10px;
+    }
+
+    .header img {
+        width: 80px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .Questions {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .Questions div {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .footerMe p {
+        font-size: 12px;
+    }
+
+    .copy {
+        font-size: 10px;
+    }
+}
