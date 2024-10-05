@@ -27,6 +27,7 @@ body {
     max-width: none;
     -o-object-fit: cover; /* Prefijo para navegadores más antiguos de Opera */
     -ms-object-fit: cover; /* Para Internet Explorer */
+    -webkit-object-fit: cover;/*Prefijo para safari*/
     object-fit: cover;
 }
 
