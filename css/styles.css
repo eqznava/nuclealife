@@ -5,55 +5,63 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #f4f4f4;
+    -webkit-font-smoothing: antialiased; /* Mejora la apariencia de las fuentes en navegadores WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejora la apariencia de las fuentes en Firefox */
 }
 
 .header {
+    display: -webkit-box;  /* Prefijo para navegadores más antiguos basados en WebKit */
+    display: -ms-flexbox;  /* Prefijo para Internet Explorer */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    overflow: hidden;
     background-color: #333;
+    height: 300px; /* Altura fija para el header */
     overflow: hidden;
 }
 
+/* Header Image Styling */
 .header img {
-    height: 300px; /* Ensures the image scales properly */
+    height: 300px; /* Altura fija para la imagen */
     width: auto;
     max-width: none;
+    -o-object-fit: cover; /* Prefijo para navegadores más antiguos de Opera */
+    -ms-object-fit: cover; /* Para Internet Explorer */
     object-fit: cover;
 }
 
-h2 {
-    font-size: 24px;
-    color: #333;
-}
-
+/* Enlaces */
 a {
     text-decoration: none;
     color: #fff;
+    transition: color 0.3s; /* Añadir transición para un cambio suave de color */
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Center all h2 elements in questions, tools, and sites sections */
+/* Secciones h2 - Siempre centrado */
 .questions h2,
 .tools h2,
 .sites h2 {
-    text-align: center; /* Centers the text horizontally */
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 /* Questions Section */
 .questions {
     padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .questionsContainerTwo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -63,7 +71,9 @@ a:hover {
 .questionsContainerTwo .questionContainerTwo,
 .questionsContainerTwo .questionContainerThree,
 .questionsContainerTwo .questionContainerFour {
-    flex: 1 1 calc(50% - 10px); /* Two columns by default */
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 calc(50% - 10px);
+    flex: 1 1 calc(50% - 10px); /* Dos columnas por defecto */
     margin: 5px;
     background-color: #007BFF;
     text-align: center;
@@ -86,6 +96,8 @@ a:hover {
 .tools {
     padding: 20px;
     margin: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -104,12 +116,16 @@ a:hover {
 .sites {
     padding: 20px;
     margin: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .sitesContainerTwo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -117,7 +133,9 @@ a:hover {
 
 .sitesContainerTwo .active,
 .sitesContainerTwo .decommissioning {
-    flex: 1 1 calc(50% - 10px); /* Two columns by default */
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 calc(50% - 10px);
+    flex: 1 1 calc(50% - 10px); /* Dos columnas por defecto */
     margin: 5px;
     background-color: #28a745;
     text-align: center;
@@ -159,12 +177,12 @@ a:hover {
         padding: 10px;
     }
 
-    .header{
-        height: 200px;
+    .header {
+        height: 200px; /* Ajuste de altura para pantallas pequeñas */
     }
 
     .header img {
-        height: 200px;
+        height: 200px; /* Ajustar la altura de la imagen en pantallas pequeñas */
     }
 
     .questionsContainerTwo,
@@ -175,7 +193,7 @@ a:hover {
     .questionsContainerTwo div,
     .sitesContainerTwo .active,
     .sitesContainerTwo .decommissioning {
-        flex-basis: 100%; /* Full width for each item */
+        flex-basis: 100%;
         margin-bottom: 10px;
     }
 
@@ -201,15 +219,8 @@ a:hover {
     .questionsContainerTwo div,
     .sitesContainerTwo .active,
     .sitesContainerTwo .decommissioning {
-        flex-basis: calc(50% - 10px); /* Two columns for medium devices */
-    }
-
-    .header{
-        height: 250px;
-    }
-
-    .header img {
-        height: 250px;
+        -ms-flex-preferred-size: calc(50% - 10px);
+        flex-basis: calc(50% - 10px); /* Dos columnas para dispositivos medianos */
     }
 }
 
@@ -218,15 +229,8 @@ a:hover {
     .questionsContainerTwo div,
     .sitesContainerTwo .active,
     .sitesContainerTwo .decommissioning {
-        flex-basis: calc(33% - 10px); /* Three columns for large devices */
-    }
-
-    .header{
-        height: 250px;
-    }
-
-    .header img {
-        height: 250px;
+        -ms-flex-preferred-size: calc(33% - 10px);
+        flex-basis: calc(33% - 10px); /* Tres columnas para pantallas grandes */
     }
 
     h2 {
