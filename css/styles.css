@@ -43,12 +43,12 @@ a {
 .tools h2,
 .sites h2 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 /* Questions Section */
 .questions {
-    padding: 20px;
+    padding: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -97,12 +97,12 @@ a {
     background-color: #f0f0f0;
     color: #333;
     border-radius: 8px;
-    margin-top: 10px;
+    margin:0px
 }
 
 .answerOne.show{
     max-height: 300px;
-    padding: 15px;
+    padding: 5px;
 }
 
 .nrcolor {
