@@ -38,10 +38,6 @@ a {
     transition: color 0.3s; /* Añadir transición para un cambio suave de color */
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 /* Secciones h2 - Siempre centrado */
 .questions h2,
 .tools h2,
