@@ -8,15 +8,20 @@ body {
 }
 
 .header {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
     background-color: #333;
-    text-align: center;
+    overflow: hidden;
 }
 
 .header img {
-    width: 100%;
-    max-width: 100%;
-    height: auto; /* Ensures the image scales properly */
+    height: 300px; /* Ensures the image scales properly */
+    width: auto;
+    max-width: none;
+    object-fit: cover;
 }
 
 h2 {
@@ -154,8 +159,12 @@ a:hover {
         padding: 10px;
     }
 
+    .header{
+        height: 200px;
+    }
+
     .header img {
-        width: 80px; /* Smaller logo */
+        height: 200px;
     }
 
     .questionsContainerTwo,
@@ -194,6 +203,14 @@ a:hover {
     .sitesContainerTwo .decommissioning {
         flex-basis: calc(50% - 10px); /* Two columns for medium devices */
     }
+
+    .header{
+        height: 250px;
+    }
+
+    .header img {
+        height: 250px;
+    }
 }
 
 /* Large Devices (min-width: 769px) */
@@ -202,6 +219,14 @@ a:hover {
     .sitesContainerTwo .active,
     .sitesContainerTwo .decommissioning {
         flex-basis: calc(33% - 10px); /* Three columns for large devices */
+    }
+
+    .header{
+        height: 250px;
+    }
+
+    .header img {
+        height: 250px;
     }
 
     h2 {
