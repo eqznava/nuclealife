@@ -1,4 +1,4 @@
-/* Estilos base */
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,14 +8,15 @@ body {
 }
 
 .header {
-    display: contents;
+    display: block;
     background-color: #333;
-    padding: 20px;
     text-align: center;
 }
 
 .header img {
     width: 100%;
+    max-width: 100%;
+    height: auto; /* Ensures the image scales properly */
 }
 
 h2 {
@@ -32,44 +33,107 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Botones para Questions */
-.Questions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+/* Center all h2 elements in questions, tools, and sites sections */
+.questions h2,
+.tools h2,
+.sites h2 {
+    text-align: center; /* Centers the text horizontally */
 }
 
-.Questions div {
-    flex: 1;
+/* Questions Section */
+.questions {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.questionsContainerTwo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.questionsContainerTwo .questionContainerOne,
+.questionsContainerTwo .questionContainerTwo,
+.questionsContainerTwo .questionContainerThree,
+.questionsContainerTwo .questionContainerFour {
+    flex: 1 1 calc(50% - 10px); /* Two columns by default */
     margin: 5px;
     background-color: #007BFF;
     text-align: center;
     padding: 15px;
     border-radius: 8px;
     color: white;
+    transition: background-color 0.3s;
 }
 
-.Questions div a h3 {
+.questionsContainerTwo a h3 {
     margin: 0;
     font-size: 18px;
 }
 
-.Questions div:hover {
+.questionsContainerTwo div:hover {
     background-color: #0056b3;
 }
 
-/* Secciones adicionales */
-.Tools, .Sites {
+/* Tools Section */
+.tools {
     padding: 20px;
     margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+.toolsContainerTwo {
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Sites Section */
+.sites {
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sitesContainerTwo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sitesContainerTwo .active,
+.sitesContainerTwo .decommissioning {
+    flex: 1 1 calc(50% - 10px); /* Two columns by default */
+    margin: 5px;
+    background-color: #28a745;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.sitesContainerTwo .active:hover,
+.sitesContainerTwo .decommissioning:hover {
+    background-color: #218838;
+}
+
+/* Footer Section */
 .footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .footerMe p {
@@ -82,28 +146,32 @@ a:hover {
     margin-top: 5px;
 }
 
-/* Responsive para iPhone 15 Pro Max */
+/* Responsive Design */
+
+/* Small Devices (max-width: 430px) */
 @media only screen and (max-width: 430px) {
     body {
         padding: 10px;
     }
 
     .header img {
-        width: 80px;
+        width: 80px; /* Smaller logo */
+    }
+
+    .questionsContainerTwo,
+    .sitesContainerTwo {
+        flex-direction: column;
+    }
+
+    .questionsContainerTwo div,
+    .sitesContainerTwo .active,
+    .sitesContainerTwo .decommissioning {
+        flex-basis: 100%; /* Full width for each item */
+        margin-bottom: 10px;
     }
 
     h2 {
         font-size: 22px;
-    }
-
-    .Questions {
-        padding: 10px;
-        flex-direction: column;
-    }
-
-    .Questions div {
-        flex-basis: 100%;
-        margin-bottom: 10px;
     }
 
     h3 {
@@ -116,5 +184,35 @@ a:hover {
 
     .copy {
         font-size: 10px;
+    }
+}
+
+/* Medium Devices (min-width: 431px and max-width: 768px) */
+@media only screen and (min-width: 431px) and (max-width: 768px) {
+    .questionsContainerTwo div,
+    .sitesContainerTwo .active,
+    .sitesContainerTwo .decommissioning {
+        flex-basis: calc(50% - 10px); /* Two columns for medium devices */
+    }
+}
+
+/* Large Devices (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+    .questionsContainerTwo div,
+    .sitesContainerTwo .active,
+    .sitesContainerTwo .decommissioning {
+        flex-basis: calc(33% - 10px); /* Three columns for large devices */
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .footerMe p {
+        font-size: 14px;
+    }
+
+    .copy {
+        font-size: 12px;
     }
 }
